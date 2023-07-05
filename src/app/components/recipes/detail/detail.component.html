@@ -1,0 +1,15 @@
+<div id="dettaglio-ricetta" *ngIf="ricetta">
+  <div class="dettaglio-image" [ngStyle]="{'background-image': 'url(' + ricetta.image + ')'}"></div>
+  <div class="dettaglio-body">
+    <button #backButton onClick="history.back()">Indietro</button>
+    <h5 class="dettaglio-title">{{ricetta.title}}</h5>
+    <p class="dettaglio-text">{{ricetta.description}}</p>
+    <h6 class="difficulty">Difficoltà:</h6>
+    <img [src]="percorso + ricetta.difficulty + '.png'" class="difficulty-star">
+    <div class="data">Ricetta pubblicata il {{ricetta.createdAt | date: 'longDate'}}</div>
+  </div>
+</div>
+
+<div *ngIf="ricetta === undefined || !ricetta">
+  <div>Siamo spiacenti, ma la ricetta cercata non si trova più qui</div>
+</div>

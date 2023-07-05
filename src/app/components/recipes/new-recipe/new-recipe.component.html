@@ -1,0 +1,88 @@
+<div class="row contenitore" style="border-radius: 25px;">
+  <div class="col-xl-5 order-2 order-lg-1">
+
+    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Crea una nuova ricetta</p>
+
+    <form class="mx-1 mx-md-4" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="d-flex flex-row align-items-center mb-4">
+        <div class="form-outline flex-fill mb-0">
+          <i class="pi pi-pencil" ></i>
+          <input placeholder="Titolo" type="text" id="title" name="title" formControlName="title"  class="form-control"/>
+          <label class="form-label" for="name">Titolo ricetta</label>
+          <p class="help is-danger" *ngIf="form.controls.title.hasError('required') && form.controls.title.touched">Il campo titolo è obbligatorio</p>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <div class="form-outline flex-fill mb-0">
+          <i class="pi pi-book" ></i>
+          <input placeholder="Descrizione" type="text" id="description" name="description" formControlName="description"  class="form-control"/>
+          <label class="form-label" for="name">Descrizione ricetta</label>
+          <p class="help is-danger" *ngIf="form.controls.description.hasError('required') && form.controls.description.touched">Il campo descrizione è obbligatorio</p>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <div class="form-outline flex-fill mb-0">
+          <i class="pi pi-camera" ></i>
+          <input placeholder="Immagine" type="text" id="image" name="image" formControlName="image"  class="form-control"/>
+          <label class="form-label" for="name">Carica un'immagine</label>
+          <p class="help is-danger" *ngIf="form.controls.image.hasError('required') && form.controls.image.touched">Il campo immagine è obbligatorio</p>
+          <div class="imageDiv" *ngIf="form.controls.image.value">
+            <img [src]="form.controls.image.value">
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <div class="form-outline flex-fill mb-0">
+          <i class="pi pi-star" ></i>
+          <input placeholder="Difficoltà" type="number" id="difficulty" name="difficulty" formControlName="difficulty"  class="form-control"/>
+          <label class="form-label" for="name">Descrizione ricetta</label>
+          <p class="help is-danger" *ngIf="form.controls.difficulty.hasError('required') && form.controls.difficulty.touched">Il campo difficoltà è obbligatorio</p>
+          <p class="help is-danger" *ngIf="form.controls.difficulty.hasError('pattern') && form.controls.difficulty.touched">La difficoltà è compresa fra 1 e 5</p>
+        </div>
+      </div>
+
+      <div class="form-check d-flex justify-content-left mb-5">
+        <input class="form-check-input me-2" type="checkbox" value="" id="published" formControlName="published" name="published" />
+        <label class="form-check-label" for="accetto">
+          Conferma per pubblicare la ricetta
+        </label>
+      </div>
+
+
+      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+        <button type="submit" class="btn btn-primary btn-lg" [disabled]="!form.valid">Crea</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+<ng-template #modalSummary let-modal>
+  <div class="modal-header">
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <h3>Riepilogo della ricetta:</h3>
+    <ul>
+      <li><strong>Titolo: </strong>{{form.controls.title.value}}</li>
+      <li><strong>Descrizione:</strong>
+        <p>{{form.controls.description.value}}</p>
+      </li>
+      <li><strong>Immagine:</strong>
+        <div class="summaryImg">
+          <img [src]="form.controls.image.value" height="20%" width="20%">
+        </div>
+      </li>
+      <li><strong>Difficulty: </strong>{{form.controls.difficulty.value}}</li>
+      <li><strong>Published: </strong>{{form.controls.published.value}}</li>
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn" aria-label="cancel" (click)="modal.dismiss()">Torna alle ricette</button>
+    <button type="button" class="btn btn-primary" aria-label="action" (click)="modal.close()">Nuova ricetta</button>
+  </div>
+</ng-template>

@@ -1,0 +1,11 @@
+@import '../../../../styles/colors.scss';
+
+.contenitore {
+  display: block;
+  .text-center {
+    color: $primary-color-1;
+  }
+  button {
+    background-color: $primary-color-1;
+  }
+}

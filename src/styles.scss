@@ -1,0 +1,139 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "primeicons/primeicons.css";
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import './styles/colors.scss';
+body {
+    font-family: 'Montserrat', sans-serif!important;
+}
+
+.picture-carousel {
+  .carousel-inner {
+    margin-top: 1px!important;
+  }
+  .carousel-title {
+    clear: both;
+  }
+
+
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 4rem;
+    height: 4rem;
+    background-color: $primary-color-1;
+    border-radius: 50%;
+  }
+}
+
+.textCarousel {
+  clear: both!important;
+  height: 150px;
+  padding-top: 30px;
+  vertical-align: bottom;
+  background-color: black;
+  align-items: center!important;
+
+  .carousel-inner {
+    margin-top: 1px!important;
+  }
+
+  .picture {
+    clear: both!important;
+    background-color: black;
+  }
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  width: 4rem!important;
+  height: 4rem!important;
+  background-color: $primary-color-1;
+  border-radius: 50%;
+}
+
+.p-inputtext {
+  border: none!important;
+  width: 100%!important;
+  padding: 0rem!important;
+}
+
+.p-input-icon-right > i:last-of-type {
+  right: -8.5rem!important;
+  color: #6c757d;
+}
+
+.contenitore {
+  width: 100%;
+  padding: 20px;
+
+  h2 {
+    font-size: 35px;
+    font-weight: bold;
+  };
+
+  p {
+    font-size: 16px;
+    text-align: justify!important;
+  }
+
+}
+
+.picsum-img-wrapper {
+  margin-top: 1px!important;
+
+  img {
+    width: 100%!important;
+  }
+}
+
+.testoEvidenziato {
+  background-color: yellow;
+  width: 400px;
+}
+
+.carousel-caption {
+  h3 {
+    font-family: "Homemade Apple", cursive!important;
+    font-size: 40px;
+    text-shadow: $secondary-color-1 2px 3px 3px;
+    padding-bottom: 30px;
+  }
+}
+
+.carousel-caption2 {
+  h3 {
+    font-family: "Homemade Apple", cursive!important;
+    font-size: 40px;
+    text-shadow: $secondary-color-1 2px 3px 3px;
+    color: white!important;
+
+  }
+}
+
+.p-paginator {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+  // background-color: $secondary-color-1!important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+	background: $primary-color-1!important;
+	border-color: $primary-color-1!important;
+	color: $secondary-color-5!important;
+}
+
+.p-element {
+  button:hover {
+    background-color: $primary-color-1!important;
+  }
+
+  button {
+    border-radius: 50%!important;
+    color: $secondary-color-1!important;
+  }
+
+  button:focus {
+    outline: 0!important;
+    box-shadow: none!important;
+  }
+}

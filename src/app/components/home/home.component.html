@@ -1,0 +1,51 @@
+<app-carousel pagina="home"></app-carousel>
+<div class="contenitore">
+  <h2 [ngClass]="evidenziato ? 'testoEvidenziato' : ''" (click)="onEvidenziazione()" style="cursor: pointer;">Benvenuti in Cibando</h2>
+  <p class="paragrafo" [ngStyle]="{'background-color': evidenziato === true ? 'yellow' : 'white'}">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus non atque distinctio unde veritatis officia consequuntur quis. Quidem eligendi iusto ullam, at nostrum eveniet aliquam. Obcaecati saepe libero nisi similique dolores, quam error earum? Delectus nemo mollitia in magni quod? Commodi dicta accusantium, consectetur porro quisquam, rerum ipsa ex praesentium non et dolores, maiores inventore? Voluptas, laboriosam excepturi. Provident saepe esse iste qui nostrum aliquid, nesciunt delectus iure asperiores omnis! Perferendis, repudiandae ea suscipit rerum tempore error eius. Non cupiditate harum illo enim, reprehenderit minus saepe vel expedita. Dolorem sint unde labore totam officiis atque, quia quam deserunt minima vitae quas exercitationem error sed officia porro ratione tenetur vero, fugit assumenda quo minus expedita recusandae autem distinctio? Magni, maxime ipsum. Pariatur vero laboriosam facere. Quas et excepturi eligendi ducimus deleniti cumque? Perspiciatis, quisquam repellat. Nesciunt accusamus porro commodi beatae quia omnis, veritatis eum nam eius totam unde, vel quas reprehenderit praesentium placeat id error. Laborum repellendus iste placeat vitae laudantium, culpa omnis aspernatur commodi, quis earum a minus porro. Ex repellendus dolor illum! Suscipit, dolores. Veniam, animi? Praesentium, nisi. Quia alias laboriosam cum recusandae omnis quaerat tempora, inventore accusantium exercitationem, et magnam quos perspiciatis excepturi culpa non unde illo est ipsa harum asperiores dolore totam consequuntur tenetur libero! Libero laborum praesentium laboriosam delectus similique doloribus pariatur modi vitae aliquid veritatis odit molestiae et, corrupti voluptatibus quod, officiis quisquam dolorum dolores! Voluptate, cumque nostrum. Beatae porro sed hic provident voluptatem debitis omnis dicta magnam? Obcaecati aperiam officia provident, expedita enim aliquid omnis natus in atque possimus soluta accusantium voluptate, quisquam repellat harum reiciendis dolor illo magni! Exercitationem, ducimus numquam beatae ad incidunt consequuntur molestiae rem repellat illo perferendis ipsum quod, harum, cumque aliquid consectetur iusto assumenda optio voluptate dolor autem necessitatibus culpa? Iure voluptate, eligendi adipisci corrupti dicta impedit repellendus animi!</p>
+
+  <h2>Dai un'occhiata alle ultime ricette:</h2>
+  <app-recipe-card [recipes]="ricette"></app-recipe-card>
+</div>
+<!-- <app-modal></app-modal> -->
+<ng-template [ngIf]="nome">
+  <div class="overlay">
+    <div id="background">
+      <p class="title">Grazie {{nome}} per esserti registrato! Di seguito troverai i dettagli del tuo nuovo account:</p>
+      <ul class="user-data">
+        <li>Nome: <strong>{{nome}}</strong></li>
+        <li>Email: <strong>{{email}}</strong></li>
+      </ul>
+      <button id="close-button" (click)="closeWindow()">CHIUDI</button>
+    </div>
+  </div>
+</ng-template>
+
+<!-- MODALE CON BOOTSTRAP -->
+<!-- <ng-template #modalRegistration let-modal>
+  <div class="overlay">
+    <div id="background">
+      <div class="modal-header">
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+      </div>
+      <div class="modal-body">
+        <p class="title">Grazie {{nome}} per esserti registrato! Di seguito troverai i dettagli del tuo nuovo account:</p>
+        <div class="user-data">
+          <div id="secondary-title">Nome:
+            <div id="name">
+              {{nome}}
+            </div>
+          </div>
+          <div id="secondary-title">Email:
+            <div id="email">
+              {{email}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn" aria-label="cancel" (click)="modal.close()">CHIUDI</button>
+      </div>
+    </div>
+  </div>
+</ng-template> -->

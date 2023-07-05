@@ -1,0 +1,14 @@
+@import "../../../styles/colors.scss";
+
+.bg-red {
+    background-color: $primary-color-1!important;
+    .navbar-nav {
+      .pi {
+        padding-right: 5px;
+      }
+    }
+}
+.logo {
+    width: 60px!important;
+    margin-right: 10px;
+}

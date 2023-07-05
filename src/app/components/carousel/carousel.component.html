@@ -1,0 +1,29 @@
+<div class="pictureCarousel" *ngIf="images.length > 1 && pagina==='home'">
+  <ngb-carousel>
+    <ng-template *ngFor="let image of images; let i = index" ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="percorso + image.id + '.jpg'" [alt]="image.label" />
+      </div>
+      <div class="carousel-caption">
+        <h3>{{image.label}}</h3>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+
+<div class="textCarousel" *ngIf="pagina==='recipe'">
+  <ngb-carousel>
+    <ng-template *ngFor="let recipe of recipes" ngbSlide>
+      <div class="carousel-picture">
+        <img src="../../../assets/image/black-bg/black.jpg">
+      </div>
+      <div class="carousel-caption2">
+        <h3>{{recipe.title}}</h3>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+
+<!-- <ng-template #noSlide>
+  <img [src]="percorso + images[0].id + '.jpg'" [alt]="images[0].label" />
+</ng-template> -->

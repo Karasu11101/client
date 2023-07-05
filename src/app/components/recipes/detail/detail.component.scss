@@ -1,0 +1,46 @@
+@import "../../../../styles/colors.scss";
+
+#dettaglio-ricetta {
+  .dettaglio-image {
+    margin-top: 1px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .dettaglio-body {
+    padding: 30px 30px;
+
+    .dettaglio-title {
+      font-weight: bold;
+      font-size: 20px;
+      color: $primary-color-1;
+      padding-bottom: 10px;
+    }
+
+    .dettaglio-text {
+      text-align: justify;
+      color: $secondary-color-1;
+    }
+
+    .difficulty {
+      font-weight: bold;
+      font-size: 14px;
+      color: $secondary-color-1;
+      padding-top: 10px;
+    }
+
+    .difficulty-star {
+      width: 120px;
+      padding-top: 5px;
+    }
+
+    .data {
+      padding-top: 10px;
+      text-align: right;
+      color: $secondary-color-1
+    }
+
+  }
+}

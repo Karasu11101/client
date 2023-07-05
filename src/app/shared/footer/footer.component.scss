@@ -1,0 +1,15 @@
+@import "../../../styles/colors.scss";
+
+footer {
+  background-color: $primary-color-1!important;
+  color: $secondary-color-5;
+  height: 300px;
+  padding: 20px;
+  clear: both!important;
+
+  .logo {
+    width: 60px!important;
+    height: 60px!important;
+  }
+
+}
