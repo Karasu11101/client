@@ -1,6 +1,16 @@
 @import "../../../../styles/colors.scss";
 
 #dettaglio-ricetta {
+
+  button {
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+    color: $primary-color-1!important;
+    font-weight: 600;
+    height: 30px;
+  }
+
   .dettaglio-image {
     margin-top: 1px;
     height: 400px;
