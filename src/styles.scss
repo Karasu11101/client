@@ -137,3 +137,56 @@ body {
     box-shadow: none!important;
   }
 }
+
+// .picsum-img-wrapper {
+//   margin-top: 1px!important;
+//   font-family: "Homemade Apple", cursive!important;
+//   font-size: 40px!important;
+//   text-shadow: 2px 3px 3px black!important;
+//   color: white!important;
+//   display: flex!important;
+//   justify-content: space-evenly!important;
+//   position: relative!important;
+
+//   img {
+//     width: 100%!important;
+//   }
+// }
+
+
+.carouselText{
+  clear: both!important;
+  height: 30vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ngb-carousel.carousel.slide{
+    width: 100%;
+  }
+
+  // .carousel-inner{
+  //   // margin-top: 1px!important;
+  //   // font-family: "Homemade Apple", cursive!important;
+  //   // font-size: 40px!important;
+  //   // text-shadow: 2px 3px 3px black!important;
+  //   // color: white!important;
+  //   // display: flex!important;
+  //   // justify-content: space-evenly!important;
+  //   // position: relative!important;
+  //   // left: 6%;
+
+  // }
+
+  .picsum-img-wrapper {
+    margin-top: 1px!important;
+    font-family: "Homemade Apple", cursive!important;
+    font-size: 40px!important;
+    text-shadow: 2px 3px 3px black!important;
+    color: white!important;
+    display: flex!important;
+    justify-content: space-evenly!important;
+    position: relative!important;
+  }
+}

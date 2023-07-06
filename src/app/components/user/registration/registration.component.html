@@ -67,7 +67,7 @@
       <div class="d-flex flex-row align-items-center mb-4">
         <div class="form-outline flex-fill mb-0">
           <i class="pi pi-user" ></i>
-          <input placeholder="nominativo" type="text" id="name" name="name" formControlName="name"  class="form-control"/>
+          <input placeholder="nominativo" type="text" id="name" name="name" formControlName="name"  class="form-control" appChangeColor appOnPlaceholder/>
           <label class="form-label" for="name">Il tuo nome</label>
           <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">Il campo nome è obbligatorio</p>
         </div>

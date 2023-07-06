@@ -11,13 +11,10 @@
   </ngb-carousel>
 </div>
 
-<div class="textCarousel" *ngIf="pagina==='recipe'">
+<div class="carouselText" *ngIf="pagina==='recipe'">
   <ngb-carousel>
     <ng-template *ngFor="let recipe of recipes" ngbSlide>
-      <div class="carousel-picture">
-        <img src="../../../assets/image/black-bg/black.jpg">
-      </div>
-      <div class="carousel-caption2">
+      <div class="picsum-img-wrapper">
         <h3>{{recipe.title}}</h3>
       </div>
     </ng-template>

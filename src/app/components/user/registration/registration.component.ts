@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Password } from 'primeng/password';
 
 @Component({
   selector: 'app-registration',
@@ -28,8 +29,12 @@ export class RegistrationComponent {
     console.log(this.form.value);
     const user = {
       name: this.form.value.name,
-      email: this.form.value.email
+      email: this.form.value.email,
+      password: this.form.value.password
     }
+    this.userService.createUser(user).subscribe((res: any) => {
+      return res;
+    })
     this.userService.datiUtente.next(user);
     this.router.navigateByUrl('home');
   }

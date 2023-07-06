@@ -21,6 +21,11 @@ import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { NewRecipeComponent } from './components/recipes/new-recipe/new-recipe.component';
+import { ChangeColorDirective } from './directives/change-color.directive';
+import { OnPlaceholderDirective } from './directives/on-placeholder.directive';
+import { CombineComponent } from './components/combine/combine.component';
+import { ButtonShadowDirective } from './directives/button-shadow.directive';
+import { CombineRecipesComponent } from './components/combine-recipes/combine-recipes.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,12 @@ import { NewRecipeComponent } from './components/recipes/new-recipe/new-recipe.c
     DetailComponent,
     RecipesListComponent,
     RegistrationComponent,
-    NewRecipeComponent
+    NewRecipeComponent,
+    ChangeColorDirective,
+    OnPlaceholderDirective,
+    CombineComponent,
+    ButtonShadowDirective,
+    CombineRecipesComponent
   ],
   imports: [
     BrowserModule,

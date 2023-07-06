@@ -18,6 +18,11 @@ export class RecipesService {
     return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`)
   }
 
+  getRecipesAsync() {
+    // return of (RECIPES);
+    return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`)
+  }
+
   getRecipe(id: string): Observable<Recipe> {
     // const recipe = RECIPES.find(ricetta => ricetta._id === id);
     // return of (recipe);

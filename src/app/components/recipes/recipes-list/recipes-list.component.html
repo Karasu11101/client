@@ -1,3 +1,4 @@
 <h2>Le nostre Ricette</h2>
-<app-recipe-card [recipes]="ricette"></app-recipe-card>
+<h6><a routerLink="/ricette/ricette-per-difficolta">Visualizza per difficoltà</a></h6>
+<app-recipe-card [recipes]="ricette$ | async"></app-recipe-card>
 <app-carousel pagina="recipe"></app-carousel>

@@ -1,0 +1,27 @@
+<div *ngIf="allRecipes$ | async" class="recipesContainer">
+  <h2>Le nostre Ricette</h2>
+  <div>
+    <h3>Facili</h3>
+    <ul>
+      <li *ngFor="let recipe of allRecipes[0]" [style]="'content: '"><a routerLink="/ricette/dettaglio/{{recipe.title}}/{{recipe._id}}">{{recipe.title}}</a> <img [src]="recipe.image"></li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Intermedie</h3>
+    <ul>
+      <li *ngFor="let recipe of allRecipes[1]"><a routerLink="/ricette/dettaglio/{{recipe.title}}/{{recipe._id}}">{{recipe.title}}</a> <img [src]="recipe.image"></li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Difficili</h3>
+    <ul>
+      <li *ngFor="let recipe of allRecipes[2]"><a routerLink="/ricette/dettaglio/{{recipe.title}}/{{recipe._id}}">{{recipe.title}}</a> <img [src]="recipe.image"></li>
+    </ul>
+  </div>
+</div>
+
+<div class="loaderBackground" *ngIf="!allRecipes.length" style="text-align: center">
+  <img src="../../../assets/image/third-spinner.gif" style="width:30%; height: 30%">
+<div>
