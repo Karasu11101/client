@@ -8,6 +8,7 @@ import { User } from '../models/user.model';
 })
 export class UserService {
   datiUtente = new ReplaySubject();
+  ruoloUtente = new ReplaySubject();
 
   apiBaseUrl = 'api/users';
 
@@ -15,5 +16,10 @@ export class UserService {
 
   createUser(user: User): Observable<User> {
     return this.http.post<User>(`${this.apiBaseUrl}/signup`, user);
+  }
+
+  getUser(email: string): Observable<User> {
+    const dati = {email: email};
+    return this.http.post<User>(`${this.apiBaseUrl}/user`, dati);
   }
 }

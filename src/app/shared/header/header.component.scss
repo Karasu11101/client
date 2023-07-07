@@ -12,3 +12,18 @@
     width: 60px!important;
     margin-right: 10px;
 }
+
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: right;
+  align-items: right;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+li {
+  color: white;
+
+}

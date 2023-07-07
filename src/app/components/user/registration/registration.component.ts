@@ -32,11 +32,16 @@ export class RegistrationComponent {
       email: this.form.value.email,
       password: this.form.value.password
     }
-    this.userService.createUser(user).subscribe((res: any) => {
-      return res;
+    this.userService.createUser(user).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.router.navigateByUrl('home');
+      },
+      error: (e) => {
+        console.log(e);
+      }
     })
     this.userService.datiUtente.next(user);
-    this.router.navigateByUrl('home');
   }
 
   checkPassword(): boolean {

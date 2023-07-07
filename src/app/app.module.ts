@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
 import { PaginatorModule } from 'primeng/paginator';
+import { ToastModule } from 'primeng/toast';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -26,6 +27,7 @@ import { OnPlaceholderDirective } from './directives/on-placeholder.directive';
 import { CombineComponent } from './components/combine/combine.component';
 import { ButtonShadowDirective } from './directives/button-shadow.directive';
 import { CombineRecipesComponent } from './components/combine-recipes/combine-recipes.component';
+import { LoginComponent } from './components/user/login/login.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { CombineRecipesComponent } from './components/combine-recipes/combine-re
     OnPlaceholderDirective,
     CombineComponent,
     ButtonShadowDirective,
-    CombineRecipesComponent
+    CombineRecipesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,8 @@ import { CombineRecipesComponent } from './components/combine-recipes/combine-re
     ReactiveFormsModule,
     PasswordModule,
     DividerModule,
-    PaginatorModule
+    PaginatorModule,
+    ToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
