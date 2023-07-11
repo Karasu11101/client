@@ -17,3 +17,10 @@
 .modal-footer {
   background-color: $primary-color-1;
 }
+
+.is-danger {
+  color: red;
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
