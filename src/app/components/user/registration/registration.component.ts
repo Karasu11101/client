@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Password } from 'primeng/password';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 
 @Component({
   selector: 'app-registration',
@@ -20,8 +21,48 @@ export class RegistrationComponent {
     email: new FormControl('', [Validators.email, Validators.required]),
     password: new FormControl('', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/)]),
     ripetiPassword: new FormControl('', Validators.required),
+    note: new FormControl(''),
     accetto: new FormControl(false, Validators.requiredTrue)
   })
+
+  Editor = ClassicEditor;
+  editorconfig = {
+    toolbar: {
+      items: [
+          'bold',
+          'italic',
+          'link',
+          'bulletedList',
+          'numberedList',
+          '|',
+          'indent',
+          'outdent',
+          '|',
+          'codeBlock',
+          'imageUpload',
+          'blockQuote',
+          'insertTable',
+          'undo',
+          'redo',
+      ]
+  },
+  image: {
+      toolbar: [
+          'imageStyle:full',
+          'imageStyle:side',
+          '|',
+          'imageTextAlternative'
+      ]
+  },
+  table: {
+      contentToolbar: [
+          'tableColumn',
+          'tableRow',
+          'mergeTableCells'
+      ]
+  },
+  height: 300,
+  }
 
   constructor(private router: Router, private userService: UserService, private ngbModal: NgbModal) {}
 

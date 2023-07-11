@@ -1,0 +1,12 @@
+<div id="profilo">
+  <h3>Ciao {{dati.name}}!</h3>
+  <h4>Di seguito troverai il riepilogo del tuo profilo:</h4>
+  <ul>
+    <li>Nome: <strong>{{dati.name}}</strong></li>
+    <li>Email: <strong>{{dati.email}}</strong></li>
+    <li>Ruolo: <strong>{{dati.role}}</strong></li>
+    <li *ngIf="dati.note === null">Note: <strong>nessuna nota</strong></li>
+    <li *ngIf="dati.note !== null">Note: <strong>{{dati.note}}</strong></li>
+    <li>Data registrazione: <strong>{{dataRegistrazione}}</strong></li>
+  </ul>
+</div>

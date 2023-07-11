@@ -15,11 +15,14 @@ export class HeaderComponent implements DoCheck {
   ruolo: any;
 
   constructor(public auth: AuthService, private router: Router, private userService: UserService)
-  { this.userService.ruoloUtente.subscribe(res => this.ruolo = res); }
+  {}
+
+  // this.userService.ruoloUtente.subscribe(res => this.ruolo = res); da mettere nel costruttore
 
   ngDoCheck(): void {
     if(JSON.parse(localStorage.getItem('user')) !== null) {
       this.user = JSON.parse(localStorage.getItem('user'));
+      this.ruolo = JSON.parse(localStorage.getItem('user')).ruolo;
     }
   }
 

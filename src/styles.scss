@@ -190,3 +190,14 @@ body {
     position: relative!important;
   }
 }
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.descrizione .ck-editor__editable {
+  min-height: 200px!important;
+  max-height: 200px!important;
+}

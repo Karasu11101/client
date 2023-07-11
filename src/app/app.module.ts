@@ -8,6 +8,7 @@ import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
 import { PaginatorModule } from 'primeng/paginator';
 import { ToastModule } from 'primeng/toast';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -28,6 +29,8 @@ import { CombineComponent } from './components/combine/combine.component';
 import { ButtonShadowDirective } from './directives/button-shadow.directive';
 import { CombineRecipesComponent } from './components/combine-recipes/combine-recipes.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
+import { RegistrationModalComponent } from './shared/registration-modal/registration-modal.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,9 @@ import { LoginComponent } from './components/user/login/login.component';
     CombineComponent,
     ButtonShadowDirective,
     CombineRecipesComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent,
+    RegistrationModalComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +67,7 @@ import { LoginComponent } from './components/user/login/login.component';
     DividerModule,
     PaginatorModule,
     ToastModule,
+    CKEditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

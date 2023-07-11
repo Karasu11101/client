@@ -3,6 +3,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecipesService } from 'src/app/services/recipes.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Recipe } from 'src/app/models/recipe.model';
 
 @Component({
   selector: 'app-new-recipe',
@@ -21,7 +24,49 @@ export class NewRecipeComponent {
     published: new FormControl(false, Validators.requiredTrue)
   })
 
-  constructor(private router: Router, private recipeService: RecipesService, private recipeModal: NgbModal) {}
+  descrizione: SafeHtml;
+  // ricetta: Recipe;
+  Editor: any = ClassicEditor;
+  editorconfig = {
+    toolbar: {
+      items: [
+          'bold',
+          'italic',
+          'link',
+          'bulletedList',
+          'numberedList',
+          '|',
+          'indent',
+          'outdent',
+          '|',
+          'codeBlock',
+          'insertTable',
+          'undo',
+          'redo',
+      ]
+  },
+  image: {
+      toolbar: [
+          'imageStyle:full',
+          'imageStyle:side',
+          '|',
+          'imageTextAlternative'
+      ]
+  },
+  table: {
+      contentToolbar: [
+          'tableColumn',
+          'tableRow',
+          'mergeTableCells'
+      ]
+  },
+  height: 300,
+  }
+
+  constructor(private router: Router,
+    private recipeService: RecipesService,
+    private recipeModal: NgbModal,
+    private sanitizer: DomSanitizer) {}
 
   onSubmit() {
     console.log(this.form.value);
@@ -33,6 +78,7 @@ export class NewRecipeComponent {
       published: this.form.value.published
     }
     this.recipeService.createRecipe(recipe).subscribe((res: any) => {
+      this.descrizione = this.sanitizer.bypassSecurityTrustHtml(res.description);
       this.open(this.modal, res.image);
     });
   }

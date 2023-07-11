@@ -13,17 +13,33 @@
     margin-right: 10px;
 }
 
-ul {
+#signup {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-content: right;
-  align-items: right;
   justify-content: flex-end;
-  list-style: none;
+  align-items: center;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    list-style: none;
+    align-items: center;
+  }
+
+  li {
+    color: white;
+
+  }
 }
 
-li {
-  color: white;
+.navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    justify-content: flex-end;
+}
 
+#iconsNavbar {
+  display: flex;
+  justify-content: right;
 }

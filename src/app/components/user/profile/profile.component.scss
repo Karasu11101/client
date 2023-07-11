@@ -1,0 +1,19 @@
+@import '../../../../styles/colors.scss';
+
+#profilo {
+  padding: 20px 30px;
+  h3 {
+    color: $primary-color-1;
+    padding-bottom: 20px;
+    font-weight: 600;
+  }
+
+  h4 {
+    padding-bottom: 15px;
+  }
+
+  ul, li {
+    padding-bottom: 10px;
+    list-style: none;
+  }
+}

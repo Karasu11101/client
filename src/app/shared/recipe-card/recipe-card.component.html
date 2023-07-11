@@ -1,12 +1,13 @@
 <div *ngIf="recipes$ | async as recipess">
-<p-paginator (onPageChange)="paginate($event)" [rows]="ricettePerPagina" [totalRecords]="recipess.length"></p-paginator>
+<p-paginator (onPageChange)="paginate($event)" [rows]="ricettePerPagina" [totalRecords]="recipess.length" *ngIf="paginaCorrente=='listaRicette'"></p-paginator>
 <div id="contenitoreCards">
   <div class="container-card" *ngFor="let recipe of recipess | slice: (page * ricettePerPagina) - ricettePerPagina : page * ricettePerPagina">
     <div class="card">
       <div class="card-image" [ngStyle]="{'background-image': 'url(' + recipe.image + ')'}"></div>
       <div class="card-body">
         <h5 class="card-title">{{recipe.title}}</h5>
-        <p class="card-text">{{recipe.description | slice: 0:accorciaTesto(recipe.description)}} ...</p>
+        <!-- <p class="card-text">{{recipe.description | slice: 0:accorciaTesto(recipe.description)}} ...</p> -->
+        <span [innerHTML]="recipe.description | slice: 0:accorciaTesto(recipe.description)"></span>
         <!-- <a routerLink="/ricette/dettaglio/{{recipe.title}}/{{recipe._id}}" class="btn btn-primary">Visualizza</a> -->
         <a routerLink="/ricette/dettaglio/{{recipe.title}}/{{recipe._id}}" class="btn btn-primary" appButtonShadow>Visualizza</a>
         <i class="pi pi-trash" style="cursor: pointer" *ngIf="ruolo == 'admin'"></i>

@@ -16,7 +16,8 @@
       <div class="d-flex flex-row align-items-center mb-4">
         <div class="form-outline flex-fill mb-0">
           <i class="pi pi-book" ></i>
-          <input placeholder="Descrizione" type="text" id="description" name="description" formControlName="description"  class="form-control"/>
+          <!-- <input placeholder="Descrizione" type="text" id="description" name="description" formControlName="description"  class="form-control"/> -->
+          <ckeditor [editor]="Editor" [config]="editorconfig" name="description" formControlName="description"  class="descrizione"></ckeditor>
           <label class="form-label" for="name">Descrizione ricetta</label>
           <p class="help is-danger" *ngIf="form.controls.description.hasError('required') && form.controls.description.touched">Il campo descrizione è obbligatorio</p>
         </div>
@@ -70,7 +71,8 @@
     <ul>
       <li><strong>Titolo: </strong>{{form.controls.title.value}}</li>
       <li><strong>Descrizione:</strong>
-        <p>{{form.controls.description.value}}</p>
+        <!-- <p>{{form.controls.description.value}}</p> -->
+        <span [innerHTML]="descrizione"></span>
       </li>
       <li><strong>Immagine:</strong>
         <div class="summaryImg">

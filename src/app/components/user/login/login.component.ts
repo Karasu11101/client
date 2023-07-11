@@ -13,7 +13,12 @@ import { UserService } from 'src/app/services/user.service';
 export class LoginComponent {
   logInError = ""; // di solito è il server che fa tornare questo errore
 
-  constructor(private auth: AuthService, private router: Router, private messageService: MessageService, private userService: UserService) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private messageService: MessageService,
+    private userService: UserService
+    ) {}
 
   onSubmit(form) {
     if(form.email != '' && form.password != '') {

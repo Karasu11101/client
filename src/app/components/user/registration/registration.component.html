@@ -119,6 +119,16 @@
         </div>
       </div>
 
+      <div class="d-flex flex-row align-items-center mb-4">
+        <div class="form-outline flex-fill mb-0">
+          <i class="pi pi-pencil"></i>
+          <!-- <input placeholder="Note" type="text" id="name" name="name" formControlName="name"  class="form-control" appChangeColor appOnPlaceholder/> -->
+          <ckeditor [editor]="Editor" [config]="editorconfig" name="description" formControlName="description"  class="descrizione"></ckeditor>
+          <label class="form-label" for="note">Note</label>
+          <!-- <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">Il campo nome è obbligatorio</p> -->
+        </div>
+      </div>
+
       <div class="form-check d-flex justify-content-center mb-5">
         <input class="form-check-input me-2" type="checkbox" value="" id="accetto" formControlName="accetto" name="accetto" />
         <label class="form-check-label" for="accetto">

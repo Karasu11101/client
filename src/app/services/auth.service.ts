@@ -21,7 +21,8 @@ export class AuthService {
     const user = {
       name: dati.name,
       email: dati.email,
-      password: dati.password
+      password: dati.password,
+      ruolo: dati.role
     }
 
     localStorage.setItem('user', JSON.stringify(user));

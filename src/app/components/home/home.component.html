@@ -14,6 +14,7 @@
       <ul class="user-data">
         <li>Nome: <strong>{{nome}}</strong></li>
         <li>Email: <strong>{{email}}</strong></li>
+        <li>Note:<span [innerHTML]="note"></span></li>
       </ul>
       <button id="close-button" (click)="closeWindow()">CHIUDI</button>
     </div>

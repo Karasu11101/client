@@ -10,6 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class RecipeCardComponent {
   @Input() recipes: Recipe[];
+  @Input() paginaCorrente: string;
 
   page = 1;
   ricettePerPagina = 4;

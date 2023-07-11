@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecipesService } from 'src/app/services/recipes.service';
 import { Recipe } from 'src/app/models/recipe.model';
 import { take, first } from 'rxjs';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-detail',
@@ -10,9 +11,10 @@ import { take, first } from 'rxjs';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
-
+  @Input() clickedPage: number;
   ricetta: Recipe;
   percorso = '../../../../assets/image/difficolta-';
+  dataPubblicazione: any;
 
   constructor(private recipeService: RecipesService,
     private activatedRoute: ActivatedRoute,
@@ -30,6 +32,7 @@ export class DetailComponent implements OnInit {
     ).subscribe({
       next: (res) => {
         this.ricetta = res;
+        this.dataPubblicazione = moment(this.ricetta.createdAt).locale('it').format('dddd DD MMMM YYYY');
       },
       error: (e) => console.log(e)
     });

@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit {
 
   email: string;
 
+  note: string;
+
   colore = 'red';
 
   coloreScelto: string;
@@ -38,6 +40,7 @@ export class HomeComponent implements OnInit {
     this.userService.datiUtente.subscribe((res: any) => {
         this.nome = res.name;
         this.email = res.email;
+        this.note = res.note;
         // this.open(this.modal);
       });
   }
@@ -72,6 +75,7 @@ export class HomeComponent implements OnInit {
     this.userService.datiUtente.next(''); // è necessario svuotare la sorgente, altrimenti il replay continuerà a caricare i dati memorizzati
     this.nome = '';
     this.email = '';
+    this.note = '';
   }
 
   // open(content: any) {
