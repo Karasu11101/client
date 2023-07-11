@@ -202,3 +202,20 @@ body {
   min-height: 200px!important;
   max-height: 200px!important;
 }
+
+#survey {
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+  #surveyTitle {
+    color: $primary-color-1;
+  }
+
+  button {
+    background-color: $primary-color-1!important;
+    border: none!important;
+    color: white!important;
+    display: flex;
+    justify-content: center;
+  }
+}

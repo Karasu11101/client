@@ -87,7 +87,7 @@ export class NewRecipeComponent {
       this.recipeModal.open(content, {ariaLabelledBy: 'modale riepilogo registrazione', size: 'xl', centered: true}).result
       .then((res) => {
         console.log('reindirizzamento a pagina nuova ricetta');
-        location.reload()
+        this.form.reset();
       })
       .catch((res) => {
         console.log('reindirizzamento a pagina ricette');

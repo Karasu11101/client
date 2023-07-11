@@ -4,9 +4,7 @@ import { RECIPES } from '../mocks/recipe.mock';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class RecipesService {
 
   apiBaseUrl = 'api/recipes';

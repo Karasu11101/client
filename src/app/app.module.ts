@@ -6,23 +6,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
-import { PaginatorModule } from 'primeng/paginator';
 import { ToastModule } from 'primeng/toast';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { RecipesModule } from './components/recipes/recipes.module';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CarouselComponent } from './components/carousel/carousel.component';
+// import { CarouselComponent } from './components/carousel/carousel.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { RecipesComponent } from './components/recipes/recipes.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
-import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component';
-import { DetailComponent } from './components/recipes/detail/detail.component';
-import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
-import { NewRecipeComponent } from './components/recipes/new-recipe/new-recipe.component';
 import { ChangeColorDirective } from './directives/change-color.directive';
 import { OnPlaceholderDirective } from './directives/on-placeholder.directive';
 import { CombineComponent } from './components/combine/combine.component';
@@ -31,21 +26,17 @@ import { CombineRecipesComponent } from './components/combine-recipes/combine-re
 import { LoginComponent } from './components/user/login/login.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { RegistrationModalComponent } from './shared/registration-modal/registration-modal.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarouselComponent,
+    // CarouselComponent,
     HeaderComponent,
     FooterComponent,
-    RecipesComponent,
     HomeComponent,
     NotfoundComponent,
-    RecipeCardComponent,
-    DetailComponent,
-    RecipesListComponent,
     RegistrationComponent,
-    NewRecipeComponent,
     ChangeColorDirective,
     OnPlaceholderDirective,
     CombineComponent,
@@ -53,7 +44,8 @@ import { RegistrationModalComponent } from './shared/registration-modal/registra
     CombineRecipesComponent,
     LoginComponent,
     ProfileComponent,
-    RegistrationModalComponent
+    RegistrationModalComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
@@ -65,9 +57,9 @@ import { RegistrationModalComponent } from './shared/registration-modal/registra
     ReactiveFormsModule,
     PasswordModule,
     DividerModule,
-    PaginatorModule,
     ToastModule,
     CKEditorModule,
+    RecipesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

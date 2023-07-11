@@ -11,7 +11,7 @@
         <div class="navbar-nav" id="iconsNavbar">
           <a class="nav-link active" aria-current="page" routerLink="home"><i class="pi pi-home"></i> Home</a>
           <a class="nav-link" routerLink="ricette"><i class="pi pi-book"></i> Ricette</a>
-          <a class="nav-link"><i class="pi pi-user"></i> Contatti</a>
+          <a class="nav-link" routerLink="contatti" routerLinkActive="active"><i class="pi pi-user"></i> Contatti</a>
           <a class="nav-link" routerLink="ricette/nuova-ricetta" routerLinkActive="active" *ngIf="ruolo == 'admin' && auth.isLogged()"><i class="pi pi-pencil"></i> Nuova ricetta</a>
           <a class="nav-link" routerLink="login" routerLinkActive="active" *ngIf="!auth.isLogged()"><i class="pi pi-id-card"></i>Accedi</a>
           <div id="signup">
