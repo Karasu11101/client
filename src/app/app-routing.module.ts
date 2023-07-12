@@ -15,10 +15,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent},
   { path: 'combine', component: CombineComponent},
-  { path: 'registrazione', component: RegistrationComponent},
   { path: 'ricette', loadChildren: () => import('./components/recipes/recipes.module').then(modulo => modulo.RecipesModule) },
-  { path: 'login', component: LoginComponent},
-  { path: 'profilo', component: ProfileComponent, canActivate: [loggedInGuard]},
+  { path: 'user', loadChildren: () => import('./components/user/user.module').then(modulo => modulo.UserModule)},
   { path: 'contatti', component: ContactsComponent},
   { path: '404', component: NotfoundComponent},
   { path: '**', redirectTo: '404', pathMatch: 'full'} // il path '**' significa qualsiasi path che non sia vuoto e non sia uno di quelli esistenti, è possibile fare un redirect ad una pagina 404
